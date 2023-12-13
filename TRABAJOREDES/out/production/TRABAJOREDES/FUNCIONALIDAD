@@ -1,0 +1,27 @@
+El programa funciona de la siguiente manera:
+
+Cuando un cliente se conecta, se cargan sus archivos de conexion y configuracion.
+En el archivo de Configuracion se muestra NOMBRE:IP:PUERTO de todos los clientes que se van a cargar.
+Y en el archivo de Conexion, se muestran las formas en la que estan conectados los clientes, es decir, si el
+cliente numero 0 se quiere comunicar con el 2, el 0 le va a mandar el mensaje a el 1 y el 1 al 2.
+
+FUNCIONALIDAD.
+
+Supongamos que tenemos estos archivos:
+
+CONFIGURACION
+
+JUAN:127.0.0.1:30022
+JOSE:127.0.0.1:30023
+CARLOS:127.0.0.1:30024
+MATIAS:127.0.0.1:3002
+
+CONEXION
+
+JUAN<->JOSE<->CARLOS<->MATIAS
+
+- CASOS:
+
+1) Un cliente se comunica con un cliente directo, (ej: JUAN-JOSE O JOSE-CARLOS O MATIAS-CARLOS)
+
+Se utilizara el metodo enviarMensajeDirecto, que recibe por parametro el nombre del destinatario y el mensaje a mandar.
